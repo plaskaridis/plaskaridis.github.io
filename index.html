@@ -160,7 +160,20 @@
     font-family: 'Lora', serif; font-size: 1.1rem;
     font-weight: 600; color: var(--ink); margin-bottom: 2px;
   }
-  .timeline-org { font-size: 14px; font-weight: 400; color: var(--ink-muted); margin-bottom: 0.75rem; }
+  .timeline-org {
+    font-size: 14px; font-weight: 400; color: var(--ink-muted); margin-bottom: 0.75rem;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .timeline-role-with-logo {
+    display: flex; align-items: center; gap: 8px;
+    font-family: 'Lora', serif; font-size: 1.1rem;
+    font-weight: 600; color: var(--ink); margin-bottom: 2px;
+  }
+  .company-logo {
+    height: 22px; width: auto; max-width: 80px;
+    object-fit: contain; border-radius: 3px;
+    flex-shrink: 0;
+  }
   .timeline-desc { font-size: 15px; font-weight: 300; color: var(--ink-soft); line-height: 1.7; }
   .timeline-sub {
     margin-top: 0.75rem; padding-left: 1rem;
@@ -312,7 +325,10 @@
 
       <div class="timeline-item">
         <div class="timeline-date">Nov 2021 – Present · 4 yrs 6 mos</div>
-        <div class="timeline-role">Comcast</div>
+        <div class="timeline-role-with-logo">
+          <img class="company-logo" src="https://logo.clearbit.com/comcast.com" alt="Comcast logo">
+          Comcast
+        </div>
         <div class="timeline-org">Philadelphia, Pennsylvania</div>
         <div class="timeline-sub">
           <div class="timeline-sub-item">
@@ -328,27 +344,36 @@
             <div class="timeline-sub-date">Nov 2021 – Apr 2023</div>
           </div>
         </div>
-        <div class="timeline-desc" style="margin-top:0.85rem;">I Conduct comprehensive technology audits across infrastructure, cybersecurity, and operational domains at one of America's largest media and technology companies. Lead end-to-end audit engagements — from scoping and planning through fieldwork and executive reporting — identifying areas for improvement and guiding the organization toward enhanced security and operational efficiency. Communicate complex technical findings to both technical and non-technical stakeholders at the executive level.</div>
+        <div class="timeline-desc" style="margin-top:0.85rem;">Conduct comprehensive technology audits across infrastructure, cybersecurity, and operational domains at one of America's largest media and technology companies. Lead end-to-end audit engagements — from scoping and planning through fieldwork and executive reporting — identifying areas for improvement and guiding the organization toward enhanced security and operational efficiency. Communicate complex technical findings to both technical and non-technical stakeholders at the executive level.</div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-date">Jun 2020 – Nov 2021 · 1 yr 6 mos</div>
         <div class="timeline-role">Associate Technology Auditor</div>
-        <div class="timeline-org">Wells Fargo · Philadelphia, Pennsylvania</div>
+        <div class="timeline-org">
+          <img class="company-logo" src="https://logo.clearbit.com/wellsfargo.com" alt="Wells Fargo logo">
+          Wells Fargo · Philadelphia, Pennsylvania
+        </div>
         <div class="timeline-desc">Performed IT audit engagements within a large, highly regulated financial institution. Gained deep expertise in the compliance challenges and regulatory requirements of the financial sector, including risk management frameworks, IT general controls testing, and application controls reviews.</div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-date">May 2019 – Nov 2019 · 7 mos</div>
         <div class="timeline-role">Information Technology Auditor</div>
-        <div class="timeline-org">TD Bank · Mount Laurel, New Jersey · Internship</div>
+        <div class="timeline-org">
+          <img class="company-logo" src="https://logo.clearbit.com/td.com" alt="TD Bank logo">
+          TD Bank · Mount Laurel, New Jersey · Internship
+        </div>
         <div class="timeline-desc">Supported IT audit activities at a major North American bank, gaining hands-on experience in audit methodology, controls testing, and financial services compliance within a fast-paced, regulated environment.</div>
       </div>
 
       <div class="timeline-item">
         <div class="timeline-date">Jul 2018 – Oct 2018 · 4 mos</div>
         <div class="timeline-role">HR Data Specialist</div>
-        <div class="timeline-org">Morgan, Lewis &amp; Bockius LLP · Philadelphia, Pennsylvania · Internship</div>
+        <div class="timeline-org">
+          <img class="company-logo" src="https://logo.clearbit.com/morganlewis.com" alt="Morgan Lewis logo">
+          Morgan, Lewis &amp; Bockius LLP · Philadelphia, Pennsylvania · Internship
+        </div>
         <div class="timeline-desc">Supported HR data operations at a global Am Law 100 firm, developing foundational skills in data management, process documentation, and professional communication in a high-standards environment.</div>
       </div>
 
@@ -413,15 +438,24 @@
     <div class="certs-grid">
       <div class="cert-card">
         <div class="cert-name">M.S. — IT Auditing &amp; Cybersecurity</div>
-        <div class="cert-body">Temple University · Fox School of Business</div>
+        <div class="cert-body" style="display:flex; align-items:center; gap:8px;">
+          <img class="company-logo" src="https://logo.clearbit.com/temple.edu" alt="Temple University logo">
+          Temple University · Fox School of Business
+        </div>
       </div>
       <div class="cert-card">
         <div class="cert-name">B.B.A. — Management Information Systems</div>
-        <div class="cert-body">Temple University · Fox School of Business</div>
+        <div class="cert-body" style="display:flex; align-items:center; gap:8px;">
+          <img class="company-logo" src="https://logo.clearbit.com/temple.edu" alt="Temple University logo">
+          Temple University · Fox School of Business
+        </div>
       </div>
       <div class="cert-card">
         <div class="cert-name">CISA</div>
-        <div class="cert-body">Certified Information Systems Auditor · ISACA</div>
+        <div class="cert-body" style="display:flex; align-items:center; gap:8px;">
+          <img class="company-logo" src="https://logo.clearbit.com/isaca.org" alt="ISACA logo">
+          Certified Information Systems Auditor · ISACA
+        </div>
       </div>
     </div>
   </div>
@@ -444,3 +478,4 @@
             <div class="contact-link-icon">in</div>
             linkedin.com/in/panayiotislaskaridis
           </a>
+          
