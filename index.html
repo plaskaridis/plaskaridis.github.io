@@ -448,6 +448,25 @@
   .projects-more-text {
     font-size: 13px; color: var(--ink-muted); font-weight: 300; letter-spacing: 0.04em;
   }
+  .project-build {
+    background: var(--sand); border-radius: 4px;
+    padding: 1.25rem 1.5rem; margin-bottom: 1.75rem;
+  }
+  .project-build-title {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--rust); margin-bottom: 1rem;
+  }
+  .project-build-grid {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem;
+  }
+  .project-build-item { display: flex; flex-direction: column; gap: 3px; }
+  .project-build-label {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.06em;
+    text-transform: uppercase; color: var(--ink-muted);
+  }
+  .project-build-value {
+    font-size: 13px; font-weight: 400; color: var(--ink-soft);
+  }
 
   @media (max-width: 600px) {
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
@@ -794,10 +813,41 @@
           </ul>
         </div>
       </div>
+      <div class="project-build">
+        <div class="project-build-title">Build</div>
+        <div class="project-build-grid">
+          <div class="project-build-item">
+            <span class="project-build-label">Source</span>
+            <span class="project-build-value">GitHub</span>
+          </div>
+          <div class="project-build-item">
+            <span class="project-build-label">Language</span>
+            <span class="project-build-value">Python &amp; JavaScript</span>
+          </div>
+          <div class="project-build-item">
+            <span class="project-build-label">Hosting</span>
+            <span class="project-build-value">AWS Lambda</span>
+          </div>
+          <div class="project-build-item">
+            <span class="project-build-label">Secrets</span>
+            <span class="project-build-value">AWS Secrets Manager (stored &amp; rotated)</span>
+          </div>
+          <div class="project-build-item">
+            <span class="project-build-label">Logic</span>
+            <span class="project-build-value">Pre-coded · Custom logic loading supported</span>
+          </div>
+          <div class="project-build-item">
+            <span class="project-build-label">Platform</span>
+            <span class="project-build-value">OS Agnostic</span>
+          </div>
+        </div>
+      </div>
       <div class="project-stack">
         <span class="tag">JavaScript</span>
         <span class="tag">Python</span>
         <span class="tag">AI / LLM</span>
+        <span class="tag">AWS Lambda</span>
+        <span class="tag">AWS Secrets Manager</span>
         <span class="tag">Web Application</span>
       </div>
       <div class="project-impact">
