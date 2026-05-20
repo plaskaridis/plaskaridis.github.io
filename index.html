@@ -358,10 +358,101 @@
     font-size: 15px; font-weight: 300; color: var(--ink-muted);
   }
 
+  /* Project Cards */
+  .project-card {
+    background: var(--cream);
+    border: 1px solid var(--sand-dark);
+    border-radius: 6px;
+    padding: 2rem;
+    position: relative; overflow: hidden;
+  }
+  .project-card::before {
+    content: '';
+    position: absolute; top: 0; left: 0; right: 0; height: 3px;
+    background: linear-gradient(90deg, var(--rust), #d97706);
+  }
+  .project-card-header {
+    display: flex; align-items: flex-start;
+    justify-content: space-between; gap: 1rem;
+    margin-bottom: 1.25rem; flex-wrap: wrap;
+  }
+  .project-title {
+    font-family: 'Lora', serif;
+    font-size: 1.25rem; font-weight: 600;
+    color: var(--ink); margin-bottom: 4px;
+  }
+  .project-subtitle {
+    font-size: 13px; color: var(--ink-muted); font-weight: 300;
+  }
+  .project-badge {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.08em;
+    text-transform: uppercase; color: var(--rust);
+    border: 1px solid var(--rust-light); padding: 4px 10px;
+    border-radius: 2px; white-space: nowrap; background: var(--rust-light);
+    flex-shrink: 0;
+  }
+  .project-desc {
+    font-size: 15px; font-weight: 300; color: var(--ink-soft);
+    line-height: 1.8; margin-bottom: 1.75rem;
+  }
+  .project-io-grid {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;
+    margin-bottom: 1.75rem; padding: 1.5rem;
+    background: var(--sand); border-radius: 4px;
+  }
+  .project-io-title {
+    font-size: 11px; font-weight: 500; letter-spacing: 0.1em;
+    text-transform: uppercase; color: var(--rust); margin-bottom: 0.75rem;
+  }
+  .project-io-list { list-style: none; display: flex; flex-direction: column; }
+  .project-io-list li {
+    font-size: 13px; color: var(--ink-soft); font-weight: 300;
+    padding: 5px 0; border-bottom: 1px solid var(--sand-dark);
+  }
+  .project-io-list li:last-child { border-bottom: none; }
+  .project-stack { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 1rem; }
+  .project-impact {
+    font-size: 13px; color: var(--ink-muted); font-weight: 300;
+    line-height: 1.75; border-left: 2px solid var(--rust-light);
+    padding-left: 1rem;
+  }
+  .projects-more {
+    margin-top: 2.5rem;
+    display: flex; flex-direction: column; align-items: center; gap: 0.75rem;
+  }
+  .barrier-mini-wrap { display: flex; flex-direction: column; align-items: center; }
+  .barrier-mini-plank {
+    width: 120px; height: 18px;
+    background: repeating-linear-gradient(
+      90deg, #f59e0b 0px, #f59e0b 12px, #1a1612 12px, #1a1612 24px
+    );
+    border: 1.5px solid #1a1612; border-radius: 2px;
+  }
+  .barrier-mini-legs {
+    display: flex; justify-content: space-between;
+    width: 110px; padding: 0 12px;
+  }
+  .barrier-mini-leg-l, .barrier-mini-leg-r {
+    width: 6px; height: 24px;
+    background: #d97706; border: 1.5px solid #1a1612; border-top: none;
+  }
+  .barrier-mini-leg-l { transform: skewX(-10deg); }
+  .barrier-mini-leg-r { transform: skewX(10deg); }
+  .barrier-mini-feet {
+    display: flex; justify-content: space-between; width: 100px; padding: 0 4px;
+  }
+  .barrier-mini-foot {
+    width: 24px; height: 5px;
+    background: #d97706; border: 1.5px solid #1a1612; border-radius: 1px;
+  }
+  .projects-more-text {
+    font-size: 13px; color: var(--ink-muted); font-weight: 300; letter-spacing: 0.04em;
+  }
+
   @media (max-width: 600px) {
     .about-grid, .contact-grid { grid-template-columns: 1fr; gap: 2rem; }
     .nav-links { display: none; }
-    .cloud-providers { grid-template-columns: 1fr; }
+    .cloud-providers, .project-io-grid { grid-template-columns: 1fr; }
     .domain-card-cloud { grid-column: auto; }
   }
 </style>
@@ -666,23 +757,127 @@
 </section>
 
 <!-- PROJECTS -->
-<section id="projects" class="projects-section">
-  <div class="projects-hazard-bg"></div>
-  <div class="construction-content">
+<section id="projects">
+  <div class="section-inner">
     <p class="section-label">Projects</p>
-    <div class="barrier-wrap">
-      <div class="barrier-plank"></div>
-      <div class="barrier-legs">
-        <div class="barrier-leg-l"></div>
-        <div class="barrier-leg-r"></div>
+    <h2 class="section-title">What I've built</h2>
+
+    <div class="project-card">
+      <div class="project-card-header">
+        <div>
+          <h3 class="project-title">AI Audit Documentation Generator</h3>
+          <p class="project-subtitle">Intelligent workflow tool for audit teams</p>
+        </div>
+        <span class="project-badge">Internal &middot; Demo Available</span>
       </div>
-      <div class="barrier-feet">
-        <div class="barrier-foot"></div>
-        <div class="barrier-foot"></div>
+      <p class="project-desc">
+        A web application that guides auditors through a structured input flow, then uses AI to generate complete, publication-ready audit language in seconds. Built with JavaScript and Python, the logic is portable to any hosting model — making it easy to integrate into existing audit platforms. The application was adopted into a larger in-house auditor platform, where it continues to drive consistency and efficiency across the audit function.
+      </p>
+      <div class="project-io-grid">
+        <div>
+          <div class="project-io-title">Auditor Inputs</div>
+          <ul class="project-io-list">
+            <li>Scope area</li>
+            <li>Control</li>
+            <li>Asset type</li>
+            <li>Population / sample</li>
+            <li>Additional context</li>
+          </ul>
+        </div>
+        <div>
+          <div class="project-io-title">Generated Output</div>
+          <ul class="project-io-list">
+            <li>Inquiry procedures</li>
+            <li>Testing procedures</li>
+            <li>Process narrative</li>
+            <li>Sampling rationale</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-stack">
+        <span class="tag">JavaScript</span>
+        <span class="tag">Python</span>
+        <span class="tag">AI / LLM</span>
+        <span class="tag">Web Application</span>
+      </div>
+      <div class="project-impact">
+        Slashes auditor preparation and review time by dozens of hours per engagement &middot; Promotes output consistency across the team &middot; Output can be used to further train and refine the underlying logic model
       </div>
     </div>
-    <h2 class="construction-title">Under Construction</h2>
-    <p class="construction-sub">Check back soon.</p>
+
+    <div class="project-card" style="margin-top: 1.5rem;">
+      <div class="project-card-header">
+        <div>
+          <h3 class="project-title">Automated Firewall Configuration &amp; Policy Testing Tool</h3>
+          <p class="project-subtitle">Drag-and-drop audit script for any firewall platform</p>
+        </div>
+        <span class="project-badge">Internal &middot; Demo Available</span>
+      </div>
+      <p class="project-desc">
+        A PowerShell and batch script that ingests a firewall configuration file via simple drag-and-drop and automatically tests 14 configuration attributes against NIST and CIS Benchmark standards. Compatible with any firewall make — including Palo Alto, Cisco, and Fortigate — and can be run across all firewalls on a network simultaneously. Output is delivered as both a text file and a structured Excel report with direct references to the exact lines in the configuration file.
+      </p>
+      <div class="project-io-grid">
+        <div>
+          <div class="project-io-title">Attributes Tested</div>
+          <ul class="project-io-list">
+            <li>Telnet settings</li>
+            <li>Admin interfaces</li>
+            <li>Admin session timeouts</li>
+            <li>ACLs</li>
+            <li>Central authentication</li>
+            <li>SNMP settings</li>
+            <li>NTP sync</li>
+            <li>Overly permissive firewall rules</li>
+            <li>IDS / IPS settings</li>
+            <li>Content filtering</li>
+            <li>IP &amp; app block lists</li>
+            <li>Logging</li>
+            <li>Malware settings</li>
+          </ul>
+        </div>
+        <div>
+          <div class="project-io-title">Output</div>
+          <ul class="project-io-list">
+            <li>Pass / fail results per attribute</li>
+            <li>Text file summary</li>
+            <li>Excel report with config line references</li>
+            <li>Screenshots of exact findings in config</li>
+          </ul>
+          <div class="project-io-title" style="margin-top: 1.25rem;">Frameworks</div>
+          <ul class="project-io-list">
+            <li>NIST CSF</li>
+            <li>CIS Benchmarks</li>
+          </ul>
+        </div>
+      </div>
+      <div class="project-stack">
+        <span class="tag">PowerShell</span>
+        <span class="tag">Batch Script</span>
+        <span class="tag">Palo Alto</span>
+        <span class="tag">Cisco</span>
+        <span class="tag">Fortigate</span>
+        <span class="tag">NIST</span>
+        <span class="tag">CIS Benchmarks</span>
+      </div>
+      <div class="project-impact">
+        Saves several hours per firewall configuration review &middot; Fully automated across an entire network's firewall estate simultaneously &middot; Eliminates manual config parsing and reduces human error
+      </div>
+    </div>
+
+    <div class="projects-more">
+      <div class="barrier-mini-wrap">
+        <div class="barrier-mini-plank"></div>
+        <div class="barrier-mini-legs">
+          <div class="barrier-mini-leg-l"></div>
+          <div class="barrier-mini-leg-r"></div>
+        </div>
+        <div class="barrier-mini-feet">
+          <div class="barrier-mini-foot"></div>
+          <div class="barrier-mini-foot"></div>
+        </div>
+      </div>
+      <p class="projects-more-text">More projects coming soon.</p>
+    </div>
   </div>
 </section>
 
